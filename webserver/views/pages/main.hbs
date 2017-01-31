@@ -5,10 +5,7 @@
   <title>Practice NodeJS</title>
 </head>
 <body>
-  <% include ../partials/header.ejs %>
-  <h1>Hello</h1>
-  <div id="todo-list">
-  </div>
+  {{> header}}
   <div>
     <form class="todo-form">
       <input type="text" placeholder="Enter new todo" id="todo"/>
@@ -16,11 +13,21 @@
       <input type="submit" value="Add" id="add-todo-button"/>
     </form>
   </div>
-  <% include ../partials/footer.ejs %>
+  <div id="todo-list">
+    {{> content}}
+  </div>
+  {{> footer}}
   <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+  <script id="todo-template" type="text/x-handlebars-template">
+    <div class="todo" data-id={{id}}>
+      <span class="todo-text">{{todo}}</span>
+      <button type="button">complete</button>
+    </div>
+  </script>
   <script src="/public/javascript/modules/apiServerConfig.js"></script>
   <script src="/public/javascript/modules/todo.js"></script>
   <script src="/public/javascript/main.js"></script>

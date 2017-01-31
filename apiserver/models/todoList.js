@@ -6,6 +6,9 @@ var TodoList = function(){
 };
 
 TodoList.prototype.addTodo = function(todo){
+  if(!todo.trim()){
+    return false;
+  }
   let newTodo = {};
   newTodo.todo = todo;
   newTodo.id = this.todoIdSequence++;
@@ -13,10 +16,21 @@ TodoList.prototype.addTodo = function(todo){
   newTodo.date = new Date();
 
   this.todoList.push(newTodo);
+  return true;
 };
 
 TodoList.prototype.findById = function(element){
   return element.id === this;
+};
+
+TodoList.prototype.actionTodo = function(callback){
+  let index = this.todoList.findIndex(this.findById, id);
+  if(index >= 0) {
+    callback();
+    return true;
+  } else {
+    return false;
+  }
 };
 
 TodoList.prototype.modifyTodo = function(id, todo){

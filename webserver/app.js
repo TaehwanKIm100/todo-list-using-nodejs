@@ -6,7 +6,7 @@ var app = express();
 
 // app.set - template engine(ejs)을 설정
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'hbs');
 
 // app.use - middleware를 해당 name으로 사용하겠다고 선언
 
