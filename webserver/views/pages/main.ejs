@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Practice NodeJS</title>
+</head>
+<body>
+  <% include ../partials/header.ejs %>
+  <h1>Hello</h1>
+  <div id="todo-list">
+  </div>
+  <div>
+    <form class="todo-form">
+      <input type="text" placeholder="Enter new todo" id="todo"/>
+      <input type="text" placeholder="Enyer your nickname" id="nickname"/>
+      <input type="submit" value="Add" id="add-todo-button"/>
+    </form>
+  </div>
+  <% include ../partials/footer.ejs %>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="/public/javascript/modules/apiServerConfig.js"></script>
+  <script src="/public/javascript/modules/todo.js"></script>
+  <script src="/public/javascript/main.js"></script>
+</body>
+</html>
